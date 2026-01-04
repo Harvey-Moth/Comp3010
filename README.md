@@ -16,6 +16,26 @@ the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phase
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
 evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
 
+### Splunk
+Splunk Installation
+Installation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/615202f18d654ddf5638b6f17b9aa27cb7d89d15/Walkthrough%20Screenshots/Splunk%20installation
+Instalation of splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the offical site "https://www.splunk.com/en_us/download.html".
+
+### 1. Downloading the dataset from the Github repository 
+<img width="2559" height="1439" alt="1  Downloading the dataset" src="https://github.com/user-attachments/assets/f7a53f38-8f90-496d-be1e-adc02c1791ce" />
+
+### 2. Moving the dataset to the correct folder so splunk can access it
+<img width="2559" height="1439" alt="2  Moving dataset into the correct folder" src="https://github.com/user-attachments/assets/3b8d0775-2f08-45de-8750-0c6d8f6caae7" />
+
+### 3. Running splunk from the dataset directory
+<img width="2559" height="1439" alt="3  Running splunk from the dataset directory" src="https://github.com/user-attachments/assets/880fe613-958d-4c07-bba7-c75229138e24" />
+
+### 4. Opening the dataset in Splunk and indexing it
+<img width="2559" height="1439" alt="4  Opening the dataset in Splunk and indexing it" src="https://github.com/user-attachments/assets/5c460b53-8d07-4713-bd4d-166183c842c9" />
+
+
+
+
 ---
 # Guided Questions (40%)
 _(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queries and
@@ -24,6 +44,7 @@ dashboards). Explain the SOC relevance of each answer.)_
 
 ### Question 1
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%201
+
 
 ### Question 2 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%202
