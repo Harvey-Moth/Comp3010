@@ -50,8 +50,11 @@ dashboards). Explain the SOC relevance of each answer.)_
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%201
 
 Methodology:
+- index="botsv3" sourcetype = "aws=cloudtrail"
+- used the field select to filter for useridentity.userName
+- used the filter to show all the values
 
-Answer:
+Answer: splunk_access,web_admin,bstoll,btun
 
 Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://github.com/user-attachments/assets/d0267c5c-111d-4337-8e71-ed3f1727788a" />
 
@@ -60,45 +63,48 @@ Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://gi
 ### Question 2 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%202
 
-Methodology:
+Methodology: Used the filter to to find all filters relating to MFA, this option shows if MFA authentication was true or false
 
-Answer:
+Answer: userIdentity.sessionContext.attributes.mfaAuthenticated
 
 Evidence:<img width="2878" height="1799" alt="Question 2 part 2" src="https://github.com/user-attachments/assets/247938ff-ee53-4194-bb78-41097d126e44" />
 
 ### Question 3 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%203
 
-Methodology:
+Methodology: Used the hardware search filter
 
-Answer:
+Answer: Intel(R) Xeon(R) CPU E5-2676 @2.40Ghz
 
 Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://github.com/user-attachments/assets/a505a8b5-5981-4e32-8543-a0c21a7bb576" />
 
 ### Question 4 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
 
-Methodology: Remember this one was timestamped as earlier so its this one when they made it public
+Methodology: **Remember this one was timestamped as earlier so its this one when they made it public**
+- Added the eventID filter
+- Added the bucketname parameter to gather all bucket api calls
+- Added the eventname parameter to search for the PutBucketAcl name as that is always the type of api call performed.
 
-Answer:
+Answer: ab45689d-69cd-41e7-8705-5350402cf7ac
 
 Evidence:<img width="2878" height="1799" alt="Question 4 Part 4" src="https://github.com/user-attachments/assets/514b59d7-5808-4845-b3b2-fb1f5e94af1c" />
 
 ### Question 5 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/5
 
-Methodology:
+Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName we can see the owner of the access control policy and their username which is
 
-Answer:
+Answer: bstoll
 
 Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
 
 ### Question 6 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/6
 
-Methodology:
+Methodology: The bucketName search parameter proved useful for a different question. What it displays is not the username of the user but instead the name of the whole bucket.
 
-Answer:
+Answer: frothlywebcode
 
 Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://github.com/user-attachments/assets/09bdc06f-13ac-42bf-8152-ee3f4e2610c4" />
 
@@ -106,20 +112,20 @@ Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://gi
 ### Question 7 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
 
-Methodology:
+Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, i searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, i made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
 
-Answer:
+Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
 Evidence:<img width="2878" height="1799" alt="Question 7 Part 3" src="https://github.com/user-attachments/assets/8aae9aa7-4b0e-4f35-af3a-fe289bd2cb2b" />
 
-Additionally timeline evidence: https://github.com/Harvey-Moth/Comp3010/blob/eb221c0a2b4c732cc0fc1ff56804d47a6f902d26/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png
+Additional timeline evidence: https://github.com/Harvey-Moth/Comp3010/blob/eb221c0a2b4c732cc0fc1ff56804d47a6f902d26/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png
 
 ### Question 8 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%208
 
-Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, i found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used" and windows 10 enterprice which was the odd one out of the list. From there i saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
+Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, i found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used) and windows 10 enterprice which was the odd one out of the list. From there i saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
 
-Answer:
+Answer: BSTOLL-L.froth.ly
 
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
 
