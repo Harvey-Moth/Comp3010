@@ -16,8 +16,6 @@ the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phase
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
 evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
 
-
-
 ---
 **Guided Questions (40%)**
 _(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queries and
@@ -39,8 +37,6 @@ Question 6 - Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tr
 Question 7 - Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
 
 Question 8 - Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%208
-
-
 ---
 **Conclusion, References and Presentation (5%)**
 _(Summarise findings, key lessons, and SOC strategy implications. Highlight improvements
