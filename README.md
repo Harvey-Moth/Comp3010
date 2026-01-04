@@ -4,6 +4,7 @@ Github Repository containing code and documentation for the Comp3010 CW2 Coursew
 **Introduction (10%)**
 _(Provide an overview of the SOC context, the BOTSv3 exercise, and the objectives of your
 investigation. Clearly define scope and assumptions.)_
+
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 
