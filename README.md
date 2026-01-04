@@ -11,6 +11,11 @@ This report will cover the analysis of the dataset BOTSv3. Analysis was performe
 _(Reflect on how SOC tiers, responsibilities, and incident handling methodologies relate to
 the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phases.)_
 
+
+SOC TIERS
+Tier 1 is the lowest tier of SOC Analysts 
+Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
+
 ---
 # Installation & Data Preparation (15%)
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
@@ -86,7 +91,7 @@ Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://gi
 
 ### Question 4 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
-
+MAKE SURE TO REDO SCREENSHOT TO SHOW THE CONTENTS OF THE REQUEST
 Methodology: **Remember this one was timestamped as earlier so its this one when they made it public**
 - Added the eventID filter
 - Added the bucketname parameter to gather all bucket api calls
