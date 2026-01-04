@@ -56,6 +56,8 @@ Methodology:
 
 Answer: splunk_access,web_admin,bstoll,btun
 
+SOC Relevance:
+
 Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://github.com/user-attachments/assets/d0267c5c-111d-4337-8e71-ed3f1727788a" />
 
 
@@ -67,6 +69,8 @@ Methodology: Used the filter to to find all filters relating to MFA, this option
 
 Answer: userIdentity.sessionContext.attributes.mfaAuthenticated
 
+SOC Relevance:
+
 Evidence:<img width="2878" height="1799" alt="Question 2 part 2" src="https://github.com/user-attachments/assets/247938ff-ee53-4194-bb78-41097d126e44" />
 
 ### Question 3 
@@ -75,6 +79,8 @@ Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ec
 Methodology: Used the hardware search filter
 
 Answer: Intel(R) Xeon(R) CPU E5-2676 @2.40Ghz
+
+SOC Relevance:
 
 Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://github.com/user-attachments/assets/a505a8b5-5981-4e32-8543-a0c21a7bb576" />
 
@@ -88,6 +94,8 @@ Methodology: **Remember this one was timestamped as earlier so its this one when
 
 Answer: ab45689d-69cd-41e7-8705-5350402cf7ac
 
+SOC Relevance:
+
 Evidence:<img width="2878" height="1799" alt="Question 4 Part 4" src="https://github.com/user-attachments/assets/514b59d7-5808-4845-b3b2-fb1f5e94af1c" />
 
 ### Question 5 
@@ -97,6 +105,8 @@ Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName w
 
 Answer: bstoll
 
+SOC Relevance:
+
 Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
 
 ### Question 6 
@@ -105,6 +115,8 @@ Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ec
 Methodology: The bucketName search parameter proved useful for a different question. What it displays is not the username of the user but instead the name of the whole bucket.
 
 Answer: frothlywebcode
+
+SOC Relevance:
 
 Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://github.com/user-attachments/assets/09bdc06f-13ac-42bf-8152-ee3f4e2610c4" />
 
@@ -116,6 +128,8 @@ Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "sp
 
 Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
+SOC Relevance:
+
 Evidence:<img width="2878" height="1799" alt="Question 7 Part 3" src="https://github.com/user-attachments/assets/8aae9aa7-4b0e-4f35-af3a-fe289bd2cb2b" />
 
 Additional timeline evidence: https://github.com/Harvey-Moth/Comp3010/blob/eb221c0a2b4c732cc0fc1ff56804d47a6f902d26/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png
@@ -126,6 +140,8 @@ Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ec
 Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, i found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used) and windows 10 enterprice which was the odd one out of the list. From there i saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
 
 Answer: BSTOLL-L.froth.ly
+
+SOC Relevance:
 
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
 
