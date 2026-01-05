@@ -1,31 +1,36 @@
 # Comp3010
 ---
-# Introduction (10%)
+# Introduction (10%) - 104 words
 _(Provide an overview of the SOC context, the BOTSv3 exercise, and the objectives of your
 investigation. Clearly define scope and assumptions.)_
 
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 ---
-# SOC Roles & Incident Handling Reflection (10%) 
+# SOC Roles & Incident Handling Reflection (10%) - 392 words
 _(Reflect on how SOC tiers, responsibilities, and incident handling methodologies relate to
 the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phases.)_
 
 There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
+## SOC Analyst Tiers Overview
 
-***Tier One - Junior Level***
-- Largely responsible for vulnerability scanning.
-- Will determine the severity of threats and escalate threats that require further attention.
-- In charge of managing the security tools used, for example, splunk or wireshark.
-- Does not proactively search for threats, only determine the severity of threats caught IDS software.
+| Tier | Level        | Responsibility |
+|-----:|-------------|----------------|
+| 1    | Junior Level | Largely responsible for vulnerability scanning. |
+| 1    | Junior Level | Will determine the severity of threats and escalate threats that require further attention. |
+| 1    | Junior Level | In charge of managing the security tools used, for example, splunk or Wireshark. |
+| 1    | Junior Level | Does not proactively search for threats, only determine the severity of threats caught IDS software. |
+| 2    | Mid Level    | Handle the escalated more complex threats that have been escalated by Tier One |
+| 2    | Mid Level    | Use further tools to build up a more comprehensive picture. Where tier one will find unusual activity, tier two will understand what happened and how can they prevent it. |
+| 3    | Senior Level | Perform active analysis to spot threats that aren't picket up automatically. |
+| 3    | Senior Level | Perform Penetration tests, which consists of testing the security of a system by acting as an attacker to point out any vulnerabilities |
 
-***Tier Two - Mid Level***
- - Handle the escalated more complex threats that have been escalated by Tier One
- - Use further tools to build up a more comprehensive picture. Where tier one will find unusual activity, tier two will understand what happened and how can they prevent it.
 
- ***Tier Three - Senior Level***
- - Perform active analysis to spot threats that aren't picket up automatically.
- - Perform Penetration tests, which consists of testing the security of a system by acting as an attacker to point out any vulnerabilities
+
+The main areas of Security Operation Centres consist of: <br>
+***Prevention*** <br>
+Using Intrusion detection systems to detect unusual activity and applying security practices, like encryption. The use of automated SIEM's that are leveraging AI to detect incoming threats in real time keeps the workload minimal so technical analysts can focus on more complex threats. In the case of the BOTSv3 exercise, ensuring data is protected, like in the case of the buckets by using an access control list with correct privacy would help prevent more serious data leaks.
+
 
 
 
@@ -36,7 +41,7 @@ There are three Tiers to SOC analysts, below I will highlight their roles and ho
 Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
 
 ---
-# Installation & Data Preparation (15%)
+# Installation & Data Preparation (15%) - 309 words
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
 evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
 ##### Installation of splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the offical site "https://www.splunk.com/en_us/download.html".
@@ -48,24 +53,25 @@ Installation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tr
 
 ### 1. Downloading the dataset from the Github repository 
 <img width="2559" height="1439" alt="1  Downloading the dataset" src="https://github.com/user-attachments/assets/f7a53f38-8f90-496d-be1e-adc02c1791ce" />
-The BOTSv3 dataset is available from a public github repository. Downloading it is as simple as downlaoding the archive to a linux machine of virtual machine.
+The BOTSv3 dataset is available from a public Github repository. Downloading it is as simple as downloading the archive to a Linux machine of virtual machine.
 
-### 2. Moving the dataset to the correct folder so splunk can access it
+### 2. Moving the dataset to the correct folder so Splunk can access it
 <img width="2559" height="1439" alt="2  Moving dataset into the correct folder" src="https://github.com/user-attachments/assets/3b8d0775-2f08-45de-8750-0c6d8f6caae7" />
 Moving the dataset to the correct folder is important. We must ensure the data is stored in the same place as the splunk files for ease of indexing later on in the process.
 
 ### 3. Running splunk from the dataset directory
 <img width="2559" height="1439" alt="3  Running splunk from the dataset directory" src="https://github.com/user-attachments/assets/880fe613-958d-4c07-bba7-c75229138e24" />
-Once the dataset is in the correct place, we can start splunk with the "./Splunk start" command. It is important we use the superuser "Sudo" prefix in order to prevent any protected storage locations from interfearing with the software, sudo allows us to run it as a administrator.
+Once the dataset is in the correct place, we can start Splunk with the "./Splunk start" command. It is important we use the superuser "Sudo" prefix in order to prevent any protected storage locations from interfering with the software, "Sudo" allows us to run it as a administrator.
 
 ### 4. Opening the dataset in Splunk and indexing it
 <img width="2559" height="1439" alt="4  Opening the dataset in Splunk and indexing it" src="https://github.com/user-attachments/assets/5c460b53-8d07-4713-bd4d-166183c842c9" />
+By using 'Index = "BOTSv3"' we can load the dataset into Splunk and begin applying filters to manage the data.
 
 
 
 
 ---
-# Guided Questions (40%)
+# Guided Questions (40%) - 403 words
 _(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queries and
 analysis. Present answers clearly, with supporting evidence (screenshots, query outputs,
 dashboards). Explain the SOC relevance of each answer.)_
@@ -170,7 +176,7 @@ SOC Relevance:
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
 
 ---
-# Conclusion, References and Presentation (5%)
+# Conclusion, References and Presentation (5%) - 29 words
 _(Summarise findings, key lessons, and SOC strategy implications. Highlight improvements
 for detection and response.
 • Professionally structured, correctly referenced (IEEE style), and clearly written. You may
