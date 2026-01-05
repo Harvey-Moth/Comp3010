@@ -54,7 +54,7 @@ Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier
 # Installation & Data Preparation (15%) - 309 words
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
 evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
-##### Installation of splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the offical site "https://www.splunk.com/en_us/download.html".
+##### Installation of Splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the official site "https://www.splunk.com/en_us/download.html".
 
 Splunk Installation
 Installation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/615202f18d654ddf5638b6f17b9aa27cb7d89d15/Walkthrough%20Screenshots/Splunk%20installation
@@ -67,9 +67,9 @@ The BOTSv3 dataset is available from a public Github repository. Downloading it 
 
 ### 2. Moving the dataset to the correct folder so Splunk can access it
 <img width="2559" height="1439" alt="2  Moving dataset into the correct folder" src="https://github.com/user-attachments/assets/3b8d0775-2f08-45de-8750-0c6d8f6caae7" />
-Moving the dataset to the correct folder is important. We must ensure the data is stored in the same place as the splunk files for ease of indexing later on in the process.
+Moving the dataset to the correct folder is important. We must ensure the data is stored in the same place as the Splunk files for ease of indexing later on in the process.
 
-### 3. Running splunk from the dataset directory
+### 3. Running Splunk from the dataset directory
 <img width="2559" height="1439" alt="3  Running splunk from the dataset directory" src="https://github.com/user-attachments/assets/880fe613-958d-4c07-bba7-c75229138e24" />
 Once the dataset is in the correct place, we can start Splunk with the "./Splunk start" command. It is important we use the superuser "Sudo" prefix in order to prevent any protected storage locations from interfering with the software, "Sudo" allows us to run it as a administrator.
 
@@ -92,11 +92,11 @@ Walkthrough Screenshots: <br>https://github.com/Harvey-Moth/Comp3010/tree/cb6aa2
 Methodology:
 - index="botsv3" sourcetype = "aws=cloudtrail"
 - used the field select to filter for useridentity.userName
-- used the filter to show all the values
+- used the filter to show all the values.
 
-Answer: splunk_access,web_admin,bstoll,btun
+Answer: splunk_access, web_admin, bstoll, btun
 
-SOC Relevance:
+By finding out all the users that accessed the AWS environment, successfully or unsuccessfully, we can begin to piece together if this is a simple mistake made by a team member or something more malicious, caused by an attacker
 
 Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://github.com/user-attachments/assets/d0267c5c-111d-4337-8e71-ed3f1727788a" />
 
@@ -109,7 +109,7 @@ Methodology: Used the filter to to find all filters relating to MFA, this option
 
 Answer: userIdentity.sessionContext.attributes.mfaAuthenticated
 
-SOC Relevance:
+This field is useful for analysis as it helps to further determine the credibility of a user and API activity. It is much more unlikely that API activity that was performed by a user without MFA authentication is from outside the company but it is not a sure tell. It is a useful fact to have to continue analysis and to know whether to prioritise and escalate to a more senior team member or not.
 
 Evidence:<img width="2878" height="1799" alt="Question 2 part 2" src="https://github.com/user-attachments/assets/247938ff-ee53-4194-bb78-41097d126e44" />
 
@@ -120,7 +120,7 @@ Methodology: Used the hardware search filter
 
 Answer: Intel(R) Xeon(R) CPU E5-2676 @2.40Ghz
 
-SOC Relevance:
+Understanding details about the hardware for the server helps us determine if systems are running as usual, as slow performance can be a sign of an issue. Knowing the hardware being used by the server, especially one you do not have physical access too like a cloud server, helps stay on top of hardware vulnerabilities 
 
 Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://github.com/user-attachments/assets/a505a8b5-5981-4e32-8543-a0c21a7bb576" />
 
@@ -134,7 +134,7 @@ Methodology: **Remember this one was timestamped as earlier so its this one when
 
 Answer: ab45689d-69cd-41e7-8705-5350402cf7ac
 
-SOC Relevance:
+
 
 Evidence:<img width="2878" height="1799" alt="Question 4 Part 4" src="https://github.com/user-attachments/assets/514b59d7-5808-4845-b3b2-fb1f5e94af1c" />
 
@@ -145,7 +145,7 @@ Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName w
 
 Answer: bstoll
 
-SOC Relevance:
+
 
 Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
 
@@ -156,7 +156,7 @@ Methodology: The bucketName search parameter proved useful for a different quest
 
 Answer: frothlywebcode
 
-SOC Relevance:
+
 
 Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://github.com/user-attachments/assets/09bdc06f-13ac-42bf-8152-ee3f4e2610c4" />
 
@@ -168,7 +168,7 @@ Methodology: Using the sourcetype "aws:s3:accesslogs" and the known hostname "sp
 
 Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
-SOC Relevance:
+
 
 Evidence:<img width="2878" height="1799" alt="Question 7 Part 3" src="https://github.com/user-attachments/assets/8aae9aa7-4b0e-4f35-af3a-fe289bd2cb2b" />
 
@@ -181,7 +181,7 @@ Methodology: Firstly, I searched driver providers to see which ones were Microso
 
 Answer: BSTOLL-L.froth.ly
 
-SOC Relevance:
+
 
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
 
