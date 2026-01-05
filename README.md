@@ -16,7 +16,9 @@ There are three Tiers to SOC analysts, below I will highlight their roles and ho
 ***Tier One*** <br>
 - Largely responsible for vanuerbility scanning.
 - Will determine the severity of threats and escalate threats that require further attention
-- 
+- In charge of managing the security tools used, for example, splunk or wireshark
+
+
 
 
 
@@ -165,5 +167,8 @@ _(Summarise findings, key lessons, and SOC strategy implications. Highlight impr
 for detection and response.
 • Professionally structured, correctly referenced (IEEE style), and clearly written. You may
 use Zotero or EndNote to help you.)_
+
+
+
 
 	
