@@ -18,7 +18,7 @@ There are three Tiers to SOC analysts, below I will highlight their roles and ho
 |-----:|-------------|----------------|
 | 1    | Junior Level | Largely responsible for vulnerability scanning. |
 | 1    | Junior Level | Will determine the severity of threats and escalate threats that require further attention. |
-| 1    | Junior Level | In charge of managing the security tools used, for example, splunk or Wireshark. |
+| 1    | Junior Level | In charge of managing the security tools used, for example, Splunk or Wireshark. |
 | 1    | Junior Level | Does not proactively search for threats, only determine the severity of threats caught IDS software. |
 | 2    | Mid Level    | Handle the escalated more complex threats that have been escalated by Tier One |
 | 2    | Mid Level    | Use further tools to build up a more comprehensive picture. Where tier one will find unusual activity, tier two will understand what happened and how can they prevent it. |
@@ -37,7 +37,7 @@ The main areas of Security Operation Centres consist of: <br>
 | Prevention | Using Intrusion detection systems to detect unusual activity and applying security practices, like encryption.<br>The use of automated SIEM's that are leveraging AI to detect incoming threats in real time keeps the workload minimal so technical analysts can focus on more complex threats.<br>In the case of the BOTSv3 exercise, ensuring data is protected, like in the case of the buckets by using an access control list with correct privacy would help prevent more serious data leaks. |
 | Detection  | Detection can be performed using tools like Wireshark to capture network traffic, and more relevant to this exercise, Splunk can be used to index and filter large amounts of data to detect vulnerabilities, misconfigurations and other security concerns.<br>In the case of BOTSv3, using search filters a data storage bucket was found to have been set to public which is a huge security concern. |
 | Response   | The incident response process consists of creating and incident response plan which details the roles and processes that would be applied if a specific incident were to take place, in the context of this exercise, the response to an analyst finding the AWS buckets ACL public was to use that to upload the text file "OPEN_BUCKET_PLEASE_FIX.txt", however, in addition to this, a good response plan would have steps on who to report this to, and any steps that should be taken by the analyst that discovered the issue, if they are qualified to do so. The consequences for this error could have been far worse so it's important to have clear steps to ensure quick and comprehensive solutions.   |
-| Recovery   |             |
+| Recovery   |As part of an incident response plan, redundancy systems and other risk mitigation processes should be outlined and implemented. After an incident has been discovered, following the incident recovery plan to implement the solution will ensure a fix is correctly implemented and does not cause any unforeseen issues. In this case, the recovery process consisted of alerting the bucket owner that of the mistake using the text file.             |
 
 
 
