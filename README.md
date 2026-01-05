@@ -86,8 +86,8 @@ _(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queri
 analysis. Present answers clearly, with supporting evidence (screenshots, query outputs,
 dashboards). Explain the SOC relevance of each answer.)_
 
-### Question 1
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%201
+### Question 1 - Identify all users that accessed the AWS service using Frothly's AWS Environment  
+Walkthrough Screenshots: <br>https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%201
 
 Methodology:
 - index="botsv3" sourcetype = "aws=cloudtrail"
@@ -102,8 +102,8 @@ Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://gi
 
 
 
-### Question 2 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%202
+### Question 2 - What field would you use to alert that AWS API activity has occurred without MFA (multi-factor authentication)? 
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%202
 
 Methodology: Used the filter to to find all filters relating to MFA, this option shows if MFA authentication was true or false
 
@@ -113,8 +113,8 @@ SOC Relevance:
 
 Evidence:<img width="2878" height="1799" alt="Question 2 part 2" src="https://github.com/user-attachments/assets/247938ff-ee53-4194-bb78-41097d126e44" />
 
-### Question 3 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%203
+### Question 3 - What is the processor number used on the web servers? 
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%203
 
 Methodology: Used the hardware search filter
 
@@ -124,8 +124,8 @@ SOC Relevance:
 
 Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://github.com/user-attachments/assets/a505a8b5-5981-4e32-8543-a0c21a7bb576" />
 
-### Question 4 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
+### Question 4 - Bud accidentally makes an S3 bucket publicly accessible. What is the event ID of the API call that enabled public access? 
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
 MAKE SURE TO REDO SCREENSHOT TO SHOW THE CONTENTS OF THE REQUEST
 Methodology: **Remember this one was timestamped as earlier so its this one when they made it public**
 - Added the eventID filter
@@ -138,8 +138,8 @@ SOC Relevance:
 
 Evidence:<img width="2878" height="1799" alt="Question 4 Part 4" src="https://github.com/user-attachments/assets/514b59d7-5808-4845-b3b2-fb1f5e94af1c" />
 
-### Question 5 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/5
+### Question 5 - What is Bud's username? 
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/5
 
 Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName we can see the owner of the access control policy and their username which is
 
@@ -149,8 +149,8 @@ SOC Relevance:
 
 Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
 
-### Question 6 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/6
+### Question 6 - What is the name of the S3 bucket that was made publicly accessible?
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/6
 
 Methodology: The bucketName search parameter proved useful for a different question. What it displays is not the username of the user but instead the name of the whole bucket.
 
@@ -161,8 +161,8 @@ SOC Relevance:
 Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://github.com/user-attachments/assets/09bdc06f-13ac-42bf-8152-ee3f4e2610c4" />
 
 
-### Question 7 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
+### Question 7 - What is the name of the text file that was successfully uploaded into the S3 bucket while it was publicly accessible?
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
 
 Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, I searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, I made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
 
@@ -172,10 +172,10 @@ SOC Relevance:
 
 Evidence:<img width="2878" height="1799" alt="Question 7 Part 3" src="https://github.com/user-attachments/assets/8aae9aa7-4b0e-4f35-af3a-fe289bd2cb2b" />
 
-Additional timeline evidence: https://github.com/Harvey-Moth/Comp3010/blob/eb221c0a2b4c732cc0fc1ff56804d47a6f902d26/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png
+Additional timeline evidence:<br> https://github.com/Harvey-Moth/Comp3010/blob/eb221c0a2b4c732cc0fc1ff56804d47a6f902d26/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png
 
-### Question 8 
-Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%208
+### Question 8 - What is the FQDN of the endpoint that is running a different Windows operating system edition than the others?
+Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%208
 
 Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, I found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used) and windows 10 enterprise which was the odd one out of the list. From there I saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
 
