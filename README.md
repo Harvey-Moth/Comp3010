@@ -11,9 +11,18 @@ This report will cover the analysis of the dataset BOTSv3. Analysis was performe
 _(Reflect on how SOC tiers, responsibilities, and incident handling methodologies relate to
 the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phases.)_
 
+There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
 
-SOC TIERS
-Tier 1 is the lowest tier of SOC Analysts 
+***Tier One*** <br>
+- Largely responsible for vanuerbility scanning.
+- Will determine the severity of threats and escalate threats that require further attention
+- 
+
+
+
+
+
+
 Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
 
 ---
