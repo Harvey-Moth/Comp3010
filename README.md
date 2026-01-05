@@ -31,6 +31,12 @@ The main areas of Security Operation Centres consist of: <br>
 ***Prevention*** <br>
 Using Intrusion detection systems to detect unusual activity and applying security practices, like encryption. The use of automated SIEM's that are leveraging AI to detect incoming threats in real time keeps the workload minimal so technical analysts can focus on more complex threats. In the case of the BOTSv3 exercise, ensuring data is protected, like in the case of the buckets by using an access control list with correct privacy would help prevent more serious data leaks.
 
+***Detection*** <br>
+Detection can be performed using tools like Wireshark to capture network traffic, and more relevant to this exercise, Splunk can be used to index and filter large amounts of data to detect vulnerabilities, misconfigurations and other security concerns. In the case of BOTSv3, using search filters a data storage bucket was found to have been set to public which is a huge security concern.
+
+***Response***
+
+
 
 
 
