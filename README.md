@@ -13,11 +13,19 @@ the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phase
 
 There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
 
-***Tier One*** <br>
-- Largely responsible for vanuerbility scanning.
-- Will determine the severity of threats and escalate threats that require further attention
-- In charge of managing the security tools used, for example, splunk or wireshark
+***Tier One - Junior Level***
+- Largely responsible for vulnerability scanning.
+- Will determine the severity of threats and escalate threats that require further attention.
+- In charge of managing the security tools used, for example, splunk or wireshark.
+- Does not proactively search for threats, only determine the severity of threats caught IDS software.
 
+***Tier Two - Mid Level***
+ - Handle the escalated more complex threats that have been escalated by Tier One
+ - Use further tools to build up a more comprehensive picture. Where tier one will find unusual activity, tier two will understand what happened and how can they prevent it.
+
+ ***Tier Three - Senior Level***
+ - Perform active analysis to spot threats that aren't picket up automatically.
+ - Perform Penetration tests, which consists of testing the security of a system by acting as an attacker to point out any vulnerabilities
 
 
 
@@ -34,13 +42,13 @@ evidence (screenshots/configs). Justify setup choices in the context of SOC infr
 ##### Installation of splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the offical site "https://www.splunk.com/en_us/download.html".
 
 Splunk Installation
-Installlation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/615202f18d654ddf5638b6f17b9aa27cb7d89d15/Walkthrough%20Screenshots/Splunk%20installation
+Installation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/615202f18d654ddf5638b6f17b9aa27cb7d89d15/Walkthrough%20Screenshots/Splunk%20installation
 
 
 
 ### 1. Downloading the dataset from the Github repository 
 <img width="2559" height="1439" alt="1  Downloading the dataset" src="https://github.com/user-attachments/assets/f7a53f38-8f90-496d-be1e-adc02c1791ce" />
-The BOTSv3 dataset is avalible from a public github repository. Downloading it is as simple as downlaoding the archive to a linux machine of virtual machine.
+The BOTSv3 dataset is available from a public github repository. Downloading it is as simple as downlaoding the archive to a linux machine of virtual machine.
 
 ### 2. Moving the dataset to the correct folder so splunk can access it
 <img width="2559" height="1439" alt="2  Moving dataset into the correct folder" src="https://github.com/user-attachments/assets/3b8d0775-2f08-45de-8750-0c6d8f6caae7" />
@@ -140,7 +148,7 @@ Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://gi
 ### Question 7 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
 
-Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, i searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, i made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
+Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, i searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, I made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
 
 Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
@@ -153,7 +161,7 @@ Additional timeline evidence: https://github.com/Harvey-Moth/Comp3010/blob/eb221
 ### Question 8 
 Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%208
 
-Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, i found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used) and windows 10 enterprice which was the odd one out of the list. From there i saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
+Methodology: Firstly, I searched driver providers to see which ones were Microsoft drivers but that did not give me much. After attempting that method, I found the "OperatingSystem" filter and when I applied it, i found there were 2 operating systems used by the hosts, Windows 10 Pro (Which all but one used) and windows 10 enterprise which was the odd one out of the list. From there i saw the hostname is BSTOLL-L but it did not give me the Fully Qualified Domain Name. After trying all the filters I could to attempt to find the domain name and looking at external sources like domain lookup tools with no luck, I found that if the host name is searched generally right after indexing, information about the host shows up including the computer name, which, in this case was the FQDN.
 
 Answer: BSTOLL-L.froth.ly
 
