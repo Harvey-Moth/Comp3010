@@ -1,6 +1,27 @@
 # Comp3010
 # Introduction
 
+#some bits to add and consider
+Look at threat reports 
+Do lookups 
+Identify threat level 
+See any threats that correlate 
+DUE DILIGENCE 
+relate to world 
+Use ai to examine report and assist 
+
+Show that we are doing continuous work 
+Commit work
+Video is manditory should clearly represent report 
+Edit professionally 
+Find ways to prove installation analysis 
+Incident report needs to be valuable to stakeholders so make sure it’s appropriate for the audience
+
+Leverage AI to improve work 
+Showcase that I can use AI 
+Copilot with it 
+REAL WORLD EXAMPLES 
+
 
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
