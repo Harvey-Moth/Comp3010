@@ -1,14 +1,11 @@
 # Comp3010
----
-# Introduction (10%) - 104 words
-_(Provide an overview of the SOC context, the BOTSv3 exercise, and the objectives of your
-investigation. Clearly define scope and assumptions.)_
+# Introduction (10%) 
+
 
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 Each Question will have supporting evidence in the form of screenshots taken directly from the Splunk analysis. In addition to the general screenshot that shows the answer to the question, there will also be a link to a folder on this Github with more supporting evidence, this could be in the form of step by step walkthroughs of the analysis process for the question or additional relevant evidence.
 
----
 # SOC Roles & Incident Handling Reflection
 
 
@@ -28,7 +25,7 @@ There are three Tiers to SOC analysts, below I will highlight their roles and ho
 
 
 
-The main areas of Security Operation Centres consist of: <br>
+<br>
 
 
 ## SOC Incident Handling Phases
@@ -40,22 +37,13 @@ The main areas of Security Operation Centres consist of: <br>
 | Response   | The incident response process consists of creating and incident response plan which details the roles and processes that would be applied if a specific incident were to take place, in the context of this exercise, the response to an analyst finding the AWS buckets ACL public was to use that to upload the text file "OPEN_BUCKET_PLEASE_FIX.txt", however, in addition to this, a good response plan would have steps on who to report this to, and any steps that should be taken by the analyst that discovered the issue, if they are qualified to do so. The consequences for this error could have been far worse so it's important to have clear steps to ensure quick and comprehensive solutions.   |
 | Recovery   |As part of an incident response plan, redundancy systems and other risk mitigation processes should be outlined and implemented. After an incident has been discovered, following the incident recovery plan to implement the solution will ensure a fix is correctly implemented and does not cause any unforeseen issues. In this case, the recovery process consisted of alerting the bucket owner that of the mistake using the text file.             |
 
+***Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity***
 
+<br>
 
-
-
-
-
-
-
-
-Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
-
----
 # Installation & Data Preparation
-_(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
-evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
-##### Installation of Splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the official site "https://www.splunk.com/en_us/download.html".
+
+Installation of Splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the official site "https://www.splunk.com/en_us/download.html".
 
 Splunk Installation
 Installation Walkthrough Screenshots: https://github.com/Harvey-Moth/Comp3010/tree/615202f18d654ddf5638b6f17b9aa27cb7d89d15/Walkthrough%20Screenshots/Splunk%20installation
@@ -79,14 +67,9 @@ Once the dataset is in the correct place, we can start Splunk with the "./Splunk
 By using 'Index = "BOTSv3"' we can load the dataset into Splunk and begin applying filters to manage the data.
 
 
+<br>
 
-
-
----
 # Guided Questions
-_(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queries and
-analysis. Present answers clearly, with supporting evidence (screenshots, query outputs,
-dashboards). Explain the SOC relevance of each answer.)_
 
 ### Question 1 - Identify all users that accessed the AWS service using Frothly's AWS Environment  
 Walkthrough Screenshots: <br>https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%201
