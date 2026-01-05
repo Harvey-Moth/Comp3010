@@ -6,6 +6,8 @@ investigation. Clearly define scope and assumptions.)_
 
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
+Each Question will have supporting evidence in the form of screenshots taken directly from the Splunk analysis. In addition to the general screenshot that shows the answer to the question, there will also be a link to a folder on this Github with more supporting evidence, this could be in the form of step by step walkthroughs of the analysis process for the question or additional relevant evidence.
+
 ---
 # SOC Roles & Incident Handling Reflection
 
@@ -96,7 +98,7 @@ Methodology:
 
 Answer: splunk_access, web_admin, bstoll, btun
 
-By finding out all the users that accessed the AWS environment, successfully or unsuccessfully, we can begin to piece together if this is a simple mistake made by a team member or something more malicious, caused by an attacker
+By finding out all the users that accessed the AWS environment, successfully or unsuccessfully, we can begin to piece together if this is a simple mistake made by a team member or something more malicious, caused by an attacker.
 
 Evidence:<img width="2878" height="1788" alt="Question 1 part 3" src="https://github.com/user-attachments/assets/d0267c5c-111d-4337-8e71-ed3f1727788a" />
 
