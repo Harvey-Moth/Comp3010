@@ -164,7 +164,7 @@ Evidence:<img width="2878" height="1799" alt="Question 6 part 1" src="https://gi
 ### Question 7 - What is the name of the text file that was successfully uploaded into the S3 bucket while it was publicly accessible?
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207
 
-Methodology: Using the sourcetyoe "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, I searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, I made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
+Methodology: Using the sourcetype "aws:s3:accesslogs" and the known hostname "splunk.froth.ly" I searched for anything using "Put" as that would be used in a PutObject operation. As we know the uploaded file is a text file, I searched for listings containing "docx" firstly but no results appeared, I then tried "txt" and got a match, to confirm, I made a note of the timestamp and compared it to the time we know the bucket was open for. The bucket was mad public at 2:01:46.000 PM and the file was uploaded at 2:02:44.000 PM meaning after the bucket was made public.
 
 Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
