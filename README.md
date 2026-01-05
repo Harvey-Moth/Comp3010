@@ -7,9 +7,8 @@ investigation. Clearly define scope and assumptions.)_
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 ---
-# SOC Roles & Incident Handling Reflection (10%) - 392 words
-_(Reflect on how SOC tiers, responsibilities, and incident handling methodologies relate to
-the BOTSv3 exercise. Discuss prevention, detection, response, and recovery phases.)_
+# SOC Roles & Incident Handling Reflection
+
 
 There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
 ## SOC Analyst Tiers Overview
@@ -51,7 +50,7 @@ The main areas of Security Operation Centres consist of: <br>
 Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
 
 ---
-# Installation & Data Preparation (15%) - 309 words
+# Installation & Data Preparation
 _(Document Splunk installation, dataset ingestion, and validation steps. Provide supporting
 evidence (screenshots/configs). Justify setup choices in the context of SOC infrastructure.)_
 ##### Installation of Splunk was performed on a VMware virtual machine running Ubuntu. Splunk Enterprise was downloaded from the official site "https://www.splunk.com/en_us/download.html".
@@ -80,8 +79,9 @@ By using 'Index = "BOTSv3"' we can load the dataset into Splunk and begin applyi
 
 
 
+
 ---
-# Guided Questions (40%) - 403 words
+# Guided Questions
 _(Choose and answer ONE SET of BOTSv3’s 200-level questions using Splunk queries and
 analysis. Present answers clearly, with supporting evidence (screenshots, query outputs,
 dashboards). Explain the SOC relevance of each answer.)_
@@ -120,7 +120,7 @@ Methodology: Used the hardware search filter
 
 Answer: Intel(R) Xeon(R) CPU E5-2676 @2.40Ghz
 
-Understanding details about the hardware for the server helps us determine if systems are running as usual, as slow performance can be a sign of an issue. Knowing the hardware being used by the server, especially one you do not have physical access too like a cloud server, helps stay on top of hardware vulnerabilities 
+Understanding details about the hardware for the server helps us determine if systems are running as usual, as slow performance can be a sign of an issue. Knowing the hardware being used by the server, especially one you do not have physical access too like a cloud server, helps stay on top of hardware vulnerabilities.
 
 Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://github.com/user-attachments/assets/a505a8b5-5981-4e32-8543-a0c21a7bb576" />
 
@@ -134,27 +134,29 @@ Methodology: **Remember this one was timestamped as earlier so its this one when
 
 Answer: ab45689d-69cd-41e7-8705-5350402cf7ac
 
-
+Using the event ID, we can flag the specific API call that caused the issue, this specific event ID is the API call "PutBucketAcl" that made the bucket public and created the vulnerability.
 
 Evidence:<img width="2878" height="1799" alt="Question 4 Part 4" src="https://github.com/user-attachments/assets/514b59d7-5808-4845-b3b2-fb1f5e94af1c" />
 
 ### Question 5 - What is Bud's username? 
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/5
 
-Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName we can see the owner of the access control policy and their username which is
+Methodology: Using the requestParameters.AccessControlPolicy.Owner.DisplayName we can see the owner of the access control policy and their username.
 
 Answer: bstoll
 
-
+This helps us identify the user that made the bucket public, at this point we can determine whether it was a mistake caused by an expected user, an unknown user, or even an expected user that should not have permissions to do what they did.
 
 Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
 
 ### Question 6 - What is the name of the S3 bucket that was made publicly accessible?
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/6
 
-Methodology: The bucketName search parameter proved useful for a different question. What it displays is not the username of the user but instead the name of the whole bucket.
+Methodology: Use the filter requestParameters.bucketName on the event ID we found before.
 
 Answer: frothlywebcode
+
+Knowing the name of the bucket in question is essential to moving forward with a recovery plan. We can determine the extent of possible damage, how important the data inside the bucket is as if it's sensitive data it could cause GDPR breaches and timeframe for how long the vulnerability was unnoticed and unfixed. 
 
 
 
@@ -168,6 +170,7 @@ Methodology: Using the sourcetype "aws:s3:accesslogs" and the known hostname "sp
 
 Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
+Being able to see the names of files within the bucket means we were able to see the API calls made to the open bucket, and even the contents of the "PUT" call which shows the lack of security for this specific bucket and on a more serious note, would allow us to see if anything malicious was uploaded during the vulnerability period.
 
 
 Evidence:<img width="2878" height="1799" alt="Question 7 Part 3" src="https://github.com/user-attachments/assets/8aae9aa7-4b0e-4f35-af3a-fe289bd2cb2b" />
@@ -181,6 +184,7 @@ Methodology: Firstly, I searched driver providers to see which ones were Microso
 
 Answer: BSTOLL-L.froth.ly
 
+Knowing the FQDN we can determine the source of the endpoint running a different operating system. If the server is uniform and only one operating system is the norm for this system, an endpoint on a different operating system and from an unknown domain could be very suspect.
 
 
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
