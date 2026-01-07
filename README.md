@@ -1,34 +1,12 @@
 # Comp3010
 # Introduction
 
-#some bits to add and consider
-Look at threat reports 
-Do lookups 
-Identify threat level 
-See any threats that correlate 
-DUE DILIGENCE 
-relate to world 
-Use ai to examine report and assist 
-
-Show that we are doing continuous work 
-Commit work
-Video is manditory should clearly represent report 
-Edit professionally 
-Find ways to prove installation analysis 
-Incident report needs to be valuable to stakeholders so make sure it’s appropriate for the audience
-
-Leverage AI to improve work 
-Showcase that I can use AI 
-Copilot with it 
-REAL WORLD EXAMPLES 
-
 
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 Each Question will have supporting evidence in the form of screenshots taken directly from the Splunk analysis. In addition to the general screenshot that shows the answer to the question, there will also be a link to a folder on this Github with more supporting evidence, this could be in the form of step by step walkthroughs of the analysis process for the question or additional relevant evidence.
 
 # SOC Roles & Incident Handling Reflection
-
 
 There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
 ## SOC Analyst Tiers Overview
@@ -132,8 +110,7 @@ Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://gi
 
 ### Question 4 - Bud accidentally makes an S3 bucket publicly accessible. What is the event ID of the API call that enabled public access? 
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
-MAKE SURE TO REDO SCREENSHOT TO SHOW THE CONTENTS OF THE REQUEST
-Methodology: **Remember this one was timestamped as earlier so its this one when they made it public**
+Methodology: 
 - Added the eventID filter
 - Added the bucketname parameter to gather all bucket api calls
 - Added the eventname parameter to search for the PutBucketAcl name as that is always the type of api call performed.
@@ -202,11 +179,14 @@ for detection and response.
 • Professionally structured, correctly referenced (IEEE style), and clearly written. You may
 use Zotero or EndNote to help you.)_
 
+Based on the investigation, we can conclude the incident unfolded as follows
 
-Bucket was opened, ACL was edited
+The s3 bucket "frothlywebcode" had it's access control list changed to public using the API call "PutBucketAcl", the event ID for this is "ab45689d-69cd-41e7-8705-5350402cf7ac". Antother analyst discovered this vulnerability and uploaded the text file "OPEN_BUCKET_PLEASE_FIX.txt" using the API call "PutObject". This file served to alert the analysts of the issue and to prevent any futher issues. 
+
+Thankfully, the file upload occured within one minute of the bucket being made public as shown in the timeline evidence (https://github.com/Harvey-Moth/Comp3010/blob/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%207/Timeline%20evidence.png), the consequences for this bucket remaining public for an extended period of time could include GDPR breaches, which could lead to loss of business license, fines and even legal prosecution.
 
 
-1825 words currently
+
 
 
 	
