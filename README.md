@@ -174,10 +174,6 @@ Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://gi
 
 ---
 # Conclusion, References and Presentation (5%) - 29 words
-_(Summarise findings, key lessons, and SOC strategy implications. Highlight improvements
-for detection and response.
-• Professionally structured, correctly referenced (IEEE style), and clearly written. You may
-use Zotero or EndNote to help you.)_
 
 Based on the investigation, we can conclude the incident unfolded as follows
 
