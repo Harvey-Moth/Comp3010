@@ -173,7 +173,7 @@ Knowing the FQDN we can determine the source of the endpoint running a different
 Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://github.com/user-attachments/assets/f803480c-398c-4830-97fd-d73f0c3ee260" />
 
 ---
-# Conclusion, References and Presentation (5%) - 29 words
+# Conclusion, References and Presentation
 
 Based on the investigation, we can conclude the incident unfolded as follows
 
