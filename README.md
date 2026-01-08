@@ -110,6 +110,7 @@ Evidence:<img width="2878" height="1786" alt="Question 3 part 2" src="https://gi
 
 ### Question 4 - Bud accidentally makes an S3 bucket publicly accessible. What is the event ID of the API call that enabled public access? 
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/4
+
 Methodology: 
 - Added the eventID filter
 - Added the bucketname parameter to gather all bucket api calls
