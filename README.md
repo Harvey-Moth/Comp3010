@@ -1,7 +1,6 @@
 # Comp3010
 # Introduction
 
-
 This report will cover the analysis of the dataset BOTSv3. Analysis was performed by the tool "Splunk" which allows filtering and formatting of data in large datasets, using this tool we can audit and analyse the operations performed captured in the dataset, who they were performed by, when they were performed and information about the technical specifics behind the users and tools used.
 
 Each Question will have supporting evidence in the form of screenshots taken directly from the Splunk analysis. In addition to the general screenshot that shows the answer to the question, there will also be a link to a folder on this Github with more supporting evidence, this could be in the form of step by step walkthroughs of the analysis process for the question or additional relevant evidence.
