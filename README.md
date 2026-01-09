@@ -8,7 +8,7 @@ Each Question will have supporting evidence in the form of screenshots taken dir
 # SOC Roles & Incident Handling Reflection
 
 There are three Tiers to SOC analysts, below I will highlight their roles and how they relate to the BOTSv3 exercise.
-## SOC Analyst Tiers Overview
+## SOC Analyst Tiers Overview [1]
 
 | Tier | Level        | Responsibility |
 |-----:|-------------|----------------|
@@ -35,7 +35,7 @@ There are three Tiers to SOC analysts, below I will highlight their roles and ho
 | Response   | The incident response process consists of creating and incident response plan which details the roles and processes that would be applied if a specific incident were to take place, in the context of this exercise, the response to an analyst finding the AWS buckets ACL public was to use that to upload the text file "OPEN_BUCKET_PLEASE_FIX.txt", however, in addition to this, a good response plan would have steps on who to report this to, and any steps that should be taken by the analyst that discovered the issue, if they are qualified to do so. The consequences for this error could have been far worse so it's important to have clear steps to ensure quick and comprehensive solutions.   |
 | Recovery   |As part of an incident response plan, redundancy systems and other risk mitigation processes should be outlined and implemented. After an incident has been discovered, following the incident recovery plan to implement the solution will ensure a fix is correctly implemented and does not cause any unforeseen issues. In this case, the recovery process consisted of alerting the bucket owner that of the mistake using the text file.             |
 
-***Source: https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity***
+
 
 <br>
 
@@ -188,4 +188,6 @@ Timeline evidence screenshot
 
 
 
-	
+# References
+[1]“Tier 1 vs. Tier 2 vs. Tier 3 Cybersecurity | ConnectWise,” www.connectwise.com. https://www.connectwise.com/cybersecurity-center/glossary/tier-1-vs-tier-2-vs-tier-3-cybersecurity
+‌
