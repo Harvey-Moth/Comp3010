@@ -130,7 +130,8 @@ Answer: bstoll
 
 This helps us identify the user that made the bucket public, at this point we can determine whether it was a mistake caused by an expected user, an unknown user, or even an expected user that should not have permissions to do what they did.
 
-Evidence:<img width="2878" height="1795" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/fc3c0d04-c31b-4f81-8ae7-00653f6df003" />
+Evidence: <img width="2878" height="1599" alt="Question 5 part 1" src="https://github.com/user-attachments/assets/56593b29-d854-4d82-9fae-c556e575964b" />
+
 
 ### Question 6 - What is the name of the S3 bucket that was made publicly accessible?
 Walkthrough Screenshots:<br> https://github.com/Harvey-Moth/Comp3010/tree/cb6aa285ecee3e2b082eff977680b7f7e895c7a1/Walkthrough%20Screenshots/Questions/Question%204-6/6
