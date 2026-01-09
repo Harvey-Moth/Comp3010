@@ -177,7 +177,9 @@ Evidence:<img width="2878" height="1799" alt="Question 8 Part 5" src="https://gi
 
 Based on the investigation, we can conclude the incident unfolded as follows
 
-The s3 bucket "frothlywebcode" had it's access control list changed to public using the API call "PutBucketAcl", the event ID for this is "ab45689d-69cd-41e7-8705-5350402cf7ac". Antother analyst discovered this vulnerability and uploaded the text file "OPEN_BUCKET_PLEASE_FIX.txt" using the API call "PutObject". This file served to alert the analysts of the issue and to prevent any futher issues. 
+The s3 bucket "frothlywebcode" had its access control list changed to public using the API call "PutBucketAcl", the event ID for this is "ab45689d-69cd-41e7-8705-5350402cf7ac". Another analyst discovered this vulnerability and uploaded the text file "OPEN_BUCKET_PLEASE_FIX.txt" using the API call "PutObject". This file served to alert the analysts of the issue and to prevent any further issues.
+Thankfully, the file upload occurred within one minute of the bucket being made public, as shown in the timeline evidence (linked below). The consequences for this bucket remaining public for an extended period of time could include GDPR breaches, which could lead to loss of business license, fines and even legal prosecution.
+
 
 Thankfully, the file upload occured within one minute of the bucket being made public as shown in the timeline evidence **(linked below)**, the consequences for this bucket remaining public for an extended period of time could include GDPR breaches, which could lead to loss of business license, fines and even legal prosecution.
 
